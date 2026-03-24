@@ -3,6 +3,7 @@ name = "wincrop"
 version = "0.1.0"
 edition = "2024"
 description = "A Windows-only screen capture and crop crate."
+license = "MIT"
 
 [dependencies]
 anyhow = "1.0"
