@@ -11,13 +11,7 @@
 
 ## 安装
 
-在您的 `Cargo.toml` 中添加 `wincrop` 和 `image` 依赖：
-
-```toml
-[dependencies]
-wincrop = "0.1.0"
-image = "0.25" # 用于处理返回的图像数据
-```
+`cargo add wincrop`
 
 *注意：此 crate 仅支持 Windows 平台。在非 Windows 环境下编译时，相关函数将不可用。*
 

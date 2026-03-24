@@ -1,22 +1,17 @@
-#[cfg(target_os = "windows")]
+#![cfg(windows)]
+
 use anyhow::{Context, Result};
-#[cfg(target_os = "windows")]
 use image::RgbaImage;
-#[cfg(target_os = "windows")]
 use minifb::{Key, MouseButton, MouseMode, Window, WindowOptions};
-#[cfg(target_os = "windows")]
 use windows::Win32::Foundation::HWND;
-#[cfg(target_os = "windows")]
 use windows::Win32::UI::WindowsAndMessaging::{
     GWL_STYLE, GetWindowLongPtrW, SWP_FRAMECHANGED, SWP_NOMOVE, SWP_NOSIZE, SetForegroundWindow,
     SetProcessDPIAware, SetWindowLongW, SetWindowPos, WS_CAPTION, WS_THICKFRAME,
 };
-#[cfg(target_os = "windows")]
 use xcap::Monitor;
 
 /// 调用此函数让用户在屏幕上框选区域，返回截取的 RgbaImage。
 /// 如果用户按下 Escape 键取消，或框选区域过小，则返回 None。
-#[cfg(target_os = "windows")]
 pub fn capture_screen_area(fps: usize) -> Result<Option<RgbaImage>> {
     unsafe {
         let _ = SetProcessDPIAware();
@@ -153,7 +148,6 @@ pub fn capture_screen_area(fps: usize) -> Result<Option<RgbaImage>> {
     }
 }
 
-#[cfg(target_os = "windows")]
 fn draw_rectangle(
     start_pos: (f32, f32),
     end_pos: (f32, f32),
