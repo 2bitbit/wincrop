@@ -2,6 +2,9 @@
 
 `wincrop` 是一个专为 Windows 平台设计的 Rust 库，提供极简的 API，用于唤起全屏截图界面，**让用户通过鼠标框选特定区域**，并直接返回区域内截取到的图像数据。
 
+>[!WARNING]
+>This crate is in early alpha. It may panic! if the mouse cursor moves outside the screen bounds during capture. Also, it forcibly sets the process-wide DPI awareness on Windows, which might mess up your GUI layout. Use at your own risk.
+
 ## 功能特点
 
 * **单一职责**：只做一件事——让用户框选屏幕区域并返回图像。
